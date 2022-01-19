@@ -18,7 +18,12 @@ from code_generation.producer import (
     TProducerInput,
     TProducerStore,
 )
-from code_generation.quantity import NanoAODQuantity, QuantitiesInput, QuantitiesStore
+from code_generation.quantity import (
+    NanoAODQuantity,
+    QuantitiesInput,
+    QuantitiesStore,
+    Quantity,
+)
 from code_generation.rules import ProducerRule, RemoveProducer
 from code_generation.systematics import SystematicShift, SystematicShiftByQuantity
 
@@ -32,6 +37,7 @@ TConfiguration = Dict[
         int,
         float,
         bool,
+        Quantity,
         EraModifier,
         SampleModifier,
         Dict[Any, Any],
