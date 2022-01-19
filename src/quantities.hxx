@@ -544,4 +544,27 @@ auto matching_genjet_pt(auto &df, const std::string &outputname,
                      {pairname, taujet_index, genjet_index, genjetpt_column});
 }
 } // end namespace tau
+/// namespace for muon specific quantities
+namespace muon {
+/**
+ * @brief Function to writeout the id of a muon.
+ *
+ * @param df the dataframe to add the quantity to
+ * @param outputname the name of the new quantity
+ * @param position position of the muon in the pair vector
+ * @param pairname name of the column containing the pair vector
+ * @param idcolumn name of the column containing the muon id values
+ * @return a dataframe with the new column
+ */
+auto id(auto &df, const std::string &outputname, const int &position,
+        const std::string &pairname, const std::string &idcolumn) {
+    return df.Define(
+        outputname,
+        [position](const ROOT::RVec<int> &pair, const ROOT::RVec<bool> &id) {
+            const int index = pair.at(position, -1);
+            return id.at(index, false);
+        },
+        {pairname, idcolumn});
+}
+} // end namespace muon
 } // end namespace quantities
