@@ -40,6 +40,7 @@ TConfiguration = Dict[
         Quantity,
         EraModifier,
         SampleModifier,
+        None,
         Dict[Any, Any],
     ],
 ]

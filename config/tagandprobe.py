@@ -70,6 +70,7 @@ def build_config(
             "max_muon_dxy": 0.3,
             "max_muon_dz": 0.7,
             "muon_id": "Muon_looseId",
+            "pairselection_min_dR": 0.5,
         },
     )
     # MM Channel Trigger setup
