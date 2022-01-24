@@ -107,6 +107,9 @@ id_loose_2 = Quantity("id_loose_2")
 id_tight_1 = Quantity("id_tight_1")
 id_tight_2 = Quantity("id_tight_2")
 
+is_global_1 = Quantity("is_global_1")
+is_global_2 = Quantity("is_global_2")
+
 dielectron_veto = Quantity("dielectron_veto")
 dimuon_veto = Quantity("dimuon_veto")
 dilepton_veto = Quantity("dilepton_veto")

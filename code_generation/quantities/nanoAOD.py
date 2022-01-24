@@ -33,6 +33,7 @@ Muon_indexToGen = NanoAODQuantity("Muon_genPartIdx")
 Muon_id_medium = NanoAODQuantity("Muon_mediumId")
 Muon_id_tight = NanoAODQuantity("Muon_tightId")
 Muon_id_loose = NanoAODQuantity("Muon_looseId")
+Muon_isGlobal = NanoAODQuantity("Muon_isGlobal")
 
 Electron_pt = NanoAODQuantity("Electron_pt")
 Electron_eta = NanoAODQuantity("Electron_eta")

@@ -566,5 +566,26 @@ auto id(auto &df, const std::string &outputname, const int &position,
         },
         {pairname, idcolumn});
 }
+/**
+ * @brief Function to writeout the is global flag of a muon.
+ *
+ * @param df the dataframe to add the quantity to
+ * @param outputname the name of the new quantity
+ * @param position position of the muon in the pair vector
+ * @param pairname name of the column containing the pair vector
+ * @param globalflagcolumn name of the column containing the muon is global flag
+ * @return a dataframe with the new column
+ */
+auto is_global(auto &df, const std::string &outputname, const int &position,
+               const std::string &pairname,
+               const std::string &globalflagcolumn) {
+    return df.Define(outputname,
+                     [position](const ROOT::RVec<int> &pair,
+                                const ROOT::RVec<bool> &globalflag) {
+                         const int index = pair.at(position, -1);
+                         return globalflag.at(index, false);
+                     },
+                     {pairname, globalflagcolumn});
+}
 } // end namespace muon
 } // end namespace quantities
