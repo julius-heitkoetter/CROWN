@@ -54,6 +54,11 @@ def build_config(
             "max_ele_dz": 0.2,
             "ele_id": nanoAOD.Electron_IDWP90,
             "max_ele_iso": 0.3,
+            "met_filters": [
+                "Flag_BadPFMuonFilter",
+                "Flag_METFilters",
+                "Flag_muonBadTrackFilter",
+            ],
         },
     )
     ###### Channel Specifics ######
@@ -198,6 +203,7 @@ def build_config(
         [
             # event.RunLumiEventFilter,
             event.Lumi,
+            event.MetFilter,
             tagandprobe.BaseMuons,
             electrons.BaseElectrons,
         ],
