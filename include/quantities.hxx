@@ -21,6 +21,9 @@ ROOT::RDF::RNode dxy(ROOT::RDF::RNode df, const std::string &outputname,
 ROOT::RDF::RNode dz(ROOT::RDF::RNode df, const std::string &outputname,
                     const int &position, const std::string &pairname,
                     const std::string &dzcolumn);
+ROOT::RDF::RNode nano_bool(ROOT::RDF::RNode df, const std::string &outputname,
+                    const int &position, const std::string &pairname,
+                    const std::string &column);
 ROOT::RDF::RNode charge(ROOT::RDF::RNode df, const std::string &outputname,
                         const int &position, const std::string &pairname,
                         const std::string &chargecolumn);

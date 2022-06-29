@@ -128,6 +128,18 @@ ROOT::RDF::RNode dz(ROOT::RDF::RNode df, const std::string &outputname,
         },
         {pairname, dzcolumn});
 }
+
+ROOT::RDF::RNode nano_bool(ROOT::RDF::RNode df, const std::string &outputname,
+                    const int &position, const std::string &pairname,
+                    const std::string &column) {
+    return df.Define(
+        outputname,
+        [position](const ROOT::RVec<int> &pair, const ROOT::RVec<bool> &nano_bool) {
+            const int index = pair.at(position);
+            return nano_bool.at(index, default_float);
+        },
+        {pairname, column});
+}
 /// Function to writeout the charge of a particle. The particle is identified
 /// via the index stored in the pair vector
 ///
