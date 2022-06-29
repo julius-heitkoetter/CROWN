@@ -129,6 +129,15 @@ ROOT::RDF::RNode dz(ROOT::RDF::RNode df, const std::string &outputname,
         {pairname, dzcolumn});
 }
 
+/// Function to writeout the a generic boolean from NanoAOD input.
+///
+/// \param df the dataframe to add the quantity to
+/// \param outputname name of the new column containing the dz value
+/// \param position index of the position in the pair vector
+/// \param pairname name of the column containing the pair vector
+/// \param column name of the column containing the boolean values
+///
+/// \returns a dataframe with the new column
 ROOT::RDF::RNode nano_bool(ROOT::RDF::RNode df, const std::string &outputname,
                     const int &position, const std::string &pairname,
                     const std::string &column) {
